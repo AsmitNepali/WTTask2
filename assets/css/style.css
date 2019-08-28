@@ -1,0 +1,14 @@
+img.thumb {
+    max-width: 77%;
+}
+.col-3.pre {
+    text-align: center;
+    font-size: 50px;
+    color: #ca3942;
+}
+
+.col-3.next {
+    text-align: center;
+    font-size: 50px;
+    color: #ca3942;
+}

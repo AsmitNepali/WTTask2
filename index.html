@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Task2</title>
+ 	<link rel="stylesheet" type="text/css" href="./assets/css/grid.css">
+ 	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+ 	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="">
+		<div class="col-12">
+			<div class="col-3">
+			</div>
+			<div class="col-3 pre" onclick="prev()">
+				<i class="fa fa-arrow-left" aria-hidden="true"></i>
+			</div>
+			<div class="col-3 next" onclick="next()">
+				<i class="fa fa-arrow-right" aria-hidden="true"></i>
+			</div>	
+			<div class="col-3">
+			</div>		
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-12">
+			<div class="col-3" id="image1">
+				<img class="thumb" src="./assets/img/spiderman.png"/>
+			</div>
+			<div class="col-3" id="image2">
+				<img class="thumb" src="./assets/img/spiderman.png"/>
+			</div>
+			<div class="col-3" id="image3">
+				<img class="thumb" src="./assets/img/spiderman.png"/>
+			</div>
+			<div class="col-3" id="image4">
+				<img class="thumb" src="./assets/img/spiderman.png"/>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	document.getElementById('image1').style.visibility = "hidden";
+	document.getElementById('image2').style.visibility = "hidden";
+	document.getElementById('image3').style.visibility = "hidden";
+	document.getElementById('image4').style.visibility = "hidden";
+	var i = 1;
+	function next()
+	{
+		i>1?document.getElementById('image'+(i-1)).style.visibility = "hidden":false;
+		document.getElementById('image'+i).style.visibility = "unset";
+		++i;
+		i<=4?document.getElementById('image4').style.visibility = "hidden":i=1;
+		console.log(i);
+	}
+	function prev()
+	{
+		console.log(i);
+		document.getElementById('image'+i).style.visibility = "hidden";
+		i-=1;
+		console.log(i);
+
+		if(i<1)i=4;
+		document.getElementById('image'+i).style.visibility = "unset";
+	}
+</script>
+</body>
+</html>
