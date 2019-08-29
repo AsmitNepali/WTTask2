@@ -5,10 +5,20 @@ img.thumb {
     text-align: center;
     font-size: 50px;
     color: #ca3942;
+    cursor: pointer;
 }
 
 .col-3.next {
     text-align: center;
     font-size: 50px;
+    color: #ca3942;
+    cursor: pointer;
+}
+.blink{
+	visibility: hidden;
+}
+.text-title {
+    text-align: center;
+    font-size: 20px;
     color: #ca3942;
 }

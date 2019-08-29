@@ -11,10 +11,10 @@
 		<div class="col-12">
 			<div class="col-3">
 			</div>
-			<div class="col-3 pre" onclick="prev()">
+			<div class="col-3 pre" onclick="next(-1)">
 				<i class="fa fa-arrow-left" aria-hidden="true"></i>
 			</div>
-			<div class="col-3 next" onclick="next()">
+			<div class="col-3 next" onclick="next(1)">
 				<i class="fa fa-arrow-right" aria-hidden="true"></i>
 			</div>	
 			<div class="col-3">
@@ -22,45 +22,51 @@
 		</div>
 	</div>
 	<hr>
+	<div class="">
+		<div class="text-title">
+			<h1>Let's Grow Up Togehter!</h1>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-12">
-			<div class="col-3" id="image1">
-				<img class="thumb" src="./assets/img/spiderman.png"/>
+			<div class="col-2 blink" id="image1">
+				<img class="thumb" src="./assets/img/1.png"/>
 			</div>
-			<div class="col-3" id="image2">
-				<img class="thumb" src="./assets/img/spiderman.png"/>
+			<div class="col-2 blink" id="image2">
+				<img class="thumb" src="./assets/img/2.png"/>
 			</div>
-			<div class="col-3" id="image3">
-				<img class="thumb" src="./assets/img/spiderman.png"/>
+			<div class="col-2 blink" id="image3">
+				<img class="thumb" src="./assets/img/3.png"/>
 			</div>
-			<div class="col-3" id="image4">
-				<img class="thumb" src="./assets/img/spiderman.png"/>
+			<div class="col-2 blink" id="image4">
+				<img class="thumb" src="./assets/img/4.png"/>
+			</div>
+			<div class="col-2 blink" id="image4">
+				<img class="thumb" src="./assets/img/5.png"/>
+			</div>
+			<div class="col-2 blink" id="image4">
+				<img class="thumb" src="./assets/img/6.png"/>
 			</div>
 		</div>
 	</div>
 <script type="text/javascript">
-	document.getElementById('image1').style.visibility = "hidden";
-	document.getElementById('image2').style.visibility = "hidden";
-	document.getElementById('image3').style.visibility = "hidden";
-	document.getElementById('image4').style.visibility = "hidden";
-	var i = 1;
-	function next()
+	var index = 0;
+	function next(x)
 	{
-		i>1?document.getElementById('image'+(i-1)).style.visibility = "hidden":false;
-		document.getElementById('image'+i).style.visibility = "unset";
-		++i;
-		i<=4?document.getElementById('image4').style.visibility = "hidden":i=1;
-		console.log(i);
+		showImage(index+=x);
 	}
-	function prev()
+	function showImage(x)
 	{
-		console.log(i);
-		document.getElementById('image'+i).style.visibility = "hidden";
-		i-=1;
-		console.log(i);
-
-		if(i<1)i=4;
-		document.getElementById('image'+i).style.visibility = "unset";
+		console.log(x);
+		var i;
+		var imgDiv = document.getElementsByClassName("blink");
+		if (x >imgDiv.length){index = 1}	
+		if (x < 1) {index = imgDiv.length}		
+			for (i=0; i <imgDiv.length; i++)
+			{
+				imgDiv[i].style.visibility = "hidden";
+			}
+			imgDiv[(index-1)].style.visibility="unset";
 	}
 </script>
 </body>
